@@ -1414,59 +1414,7 @@ int main() {
 */
 	//printf("clock cycles for 8 calls of KYBER KEM: %u \n", numCycle1*8);                 // Display the difference
 
-	/*///////////////////////////////////////////////
-
-    printf("-------------------------------------------------------------------- \n");
-    printf("Test 2: Run Kyber KEM with MMSE Quantization 1 time to exchange 1 AES Key\n");
-    printf("*The MMSE quantization codebooks: dx_MMSE_QCodebook_symmetric.text \n");
-    printf("*dx = 4, 5, 10, 11, same as the original Kyber compression parameter \n");
-    printf("-------------------------------------------------------------------- \n");
-
-	*DWT_CONTROL |= 1; // enable the counter
-	t1 = *DWT_CYCCNT;
-
-    crypto_kem_keypair(pk, sk);
-
-	t2 = *DWT_CYCCNT;
-	*DWT_CONTROL |= 0; // close the counter
-	numCycle1 = t2 - t1;
-	printf("clock cycles for 1 call of KeyGen: %u \n",
-				numCycle1);                 // Display the difference
-
-	*DWT_CONTROL |= 1; // enable the counter
-	t1 = *DWT_CYCCNT;
-
-	crypto_kem_enc_mmse(ct, key_b, pk);
-
-	t2 = *DWT_CYCCNT;
-	*DWT_CONTROL |= 0; // close the counter
-	numCycle1 = t2 - t1;
-	printf("clock cycles for 1 call of Enc: %u \n",
-					numCycle1);
-
-	*DWT_CONTROL |= 1; // enable the counter
-	t1 = *DWT_CYCCNT;
-
-	crypto_kem_dec_mmse(key_a, ct, sk);
-
-	t2 = *DWT_CYCCNT;
-	*DWT_CONTROL |= 0; // close the counter
-	numCycle1 = t2 - t1;
-	printf("clock cycles for 1 call of Dec: %u \n",
-					numCycle1);
-
-
-
-    printf("\n");
-    printf("secret message: \n");
-    printUint8Array(key_b, 32);
-
-    printf("decrypted secret message: \n");
-    printUint8Array(key_a, 32);
-
-	//printf("clock cycles for 1 call of KYBER KEM with MMSE Quantizaion: %u \n",numCycle1);                 // Display the difference
-	printf("\n");
-*/
+	
 
     ////////////////////////////////////////////////////////////////////
 
