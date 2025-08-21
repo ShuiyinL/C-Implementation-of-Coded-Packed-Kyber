@@ -7,10 +7,15 @@
 
 /* MMSE_Q_MODE: Only applied to the proposed P_Kyber Scheme; doesn't affect the original Kyber*/
 #ifndef MMSE_Q_MODE
-#define MMSE_Q_MODE 'T'
+#define MMSE_Q_MODE 'F'
 /*T: Quantize both u and v with MMSE quantization: Q_mmse(u,2^du), Q_mmse(v,2^dv) */
 /*F: Quantize both u and v with original Kyber quantization: compress(u,2^du),compress(v,2^dv) **/
 #endif
+
+
+#define Compress_More 'T'
+/*T: using smaller compression parameter of KYBER1024: du=10,dv=4 */
+/*F: using the original compression parameter of KYBER1024: du=11,dv=5 */
 
 #define LATTICE_DIM 8    //value of L in P_L Kyber; set L = 8 for testing E8 encoder and decoder
 
@@ -74,11 +79,24 @@
 
 #elif KYBER_K == 4
 #define KYBER_ETA1 2
+
+
+#if (Compress_More =='F')
+
 #define KYBER_POLYCOMPRESSEDBYTES    160
 #define KYBER_POLYVECCOMPRESSEDBYTES (KYBER_K * 352)
 
 #define KYBER_POLYCOMPRESSEDBYTES_LD    (LATTICE_DIM *160)
 #define KYBER_POLYVECCOMPRESSEDBYTES_LD (KYBER_K * 352)
+#else
+
+#define KYBER_POLYCOMPRESSEDBYTES    128
+#define KYBER_POLYVECCOMPRESSEDBYTES (KYBER_K * 320)
+
+#define KYBER_POLYCOMPRESSEDBYTES_LD    (LATTICE_DIM *128)
+#define KYBER_POLYVECCOMPRESSEDBYTES_LD (KYBER_K * 320)
+
+#endif
 
 #endif
 
