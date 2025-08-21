@@ -1,17 +1,17 @@
 /*
  ============================================================================
- Name        : P_Kyber_Test.c
+ Name        : P_1_Kyber_Test.c
  Debugger    : Arm FVP (installed with Arm DS) with MPS2_Cortex_M4
  Author      : 
  Version     : 1
  Copyright   : Free
- Description : Implementation of Coded/Uncoded P-Kyber with MMSE/Kyber Quantization
+ Description : Implementation of Coded/Uncoded P_1-Kyber with MMSE/Kyber Quantization
 
 Notes:
 *The code is based on the official Kyber reference implementation:
 **https://github.com/pq-crystals/kyber
 
-*P_Kyber_Test.c: this main file contains all sub-functions used in P_Kyber PKE and KEM.
+*P_1_Kyber_Test.c: this main file contains all sub-functions used in P_Kyber PKE and KEM.
 **Extra global parameters are defined in params.h
 
 *randombytes.c: Because FVP runs on bare-metal or an undefined OS, randombytes.c currently uses a deterministic test seed for testing only.
