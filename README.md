@@ -24,5 +24,5 @@ Performance Comparison 2: Original KYBER1024 KEM (du=11, dv=5) vs. P_1-KYBER1024
 | Method                                         | KeyGen (CPU Clock Cycles)| Enc (CPU Clock Cycles) | Dec (CPU Clock Cycles) |Ciphertext Size (bytes) |Decryption Failure Rate |
 |------------------------------------------------|--------------------------|------------------------|------------------------|------------------------|------------------------|
 | KYBER1024                                      | 416,342                  | 505,098                | 534,088                |1568  (du=11, dv=5)     | 2^{-174}               |
-| E8 coded P_1 KYBER1041 with Kyber quantization | 416,341                  | 502,323                | 557,284                |1408  (du=10, dv=4)     | 2^{-199}               |
+| E8 coded P_1 KYBER1024 with Kyber quantization | 416,341                  | 502,323                | 557,284                |1408  (du=10, dv=4)     | 2^{-199}               |
 | E8 Coded P_1-KYBER1024 with MMSE quantization  | 416,341                  | 615,653                | 699,005                |1048  (du=10, dv=4)     | 2^{-204}               |
