@@ -15,19 +15,20 @@ The code is based on the official Kyber reference implementation: https://github
 ### Guide: Importing an Exported Project into Arm Development Studio
 #### 1. Installation and Project Import
 1. Unzip `stm32_export_project.zip`.
-2. Import the folder `P_Kyber_Test` as an **existing project** in Arm DS.
+2. Import the folder `P_Kyber_Test` as **Existing Projects into Workspace** in Arm DS.
    - The automatically generated **Makefile** is located in: P_Kyber_Test\Debug\makefile
    - The current **main file** is located in: P_Kyber_Test\src\P_Kyber_Test.c
    - This file is configured for **L = 1**.
    - To run with **L = 8**,  overwrite `P_Kyber_Test\src\P_Kyber_Test.c` with `P_Kyber_Test.c` from the root folder of the repository.
 
-#### 2. Debugger Setup
-1. Create an **MPS2-Cortex M4 Debugger** under: File → New → Model Connection → Arm FVP (installed with Arm DS)
-   - **Alternative:** Unzip `M4_Installed.zip` and import the **launch configuration** from the `M4_Installed` folder.
+#### 2. Debugger Setup: MPS2-Cortex M4
+1. Unzip `M4_Installed.zip`
+2. import the folder `M4_Installed` as **Existing Projects into Workspace** in Arm DS
+   - **Alternative: Create an **MPS2-Cortex M4 Debugger** under: File → New → Model Connection → Arm FVP (installed with Arm DS) 
 
 #### 3. Compile and Run
-1. Compile the imported project `P_Kyber_Test`.
-2. Run the project using the created MPS2-Cortex M4 Debugger.
+1. build the imported project `P_Kyber_Test`.
+2. Run the project using the created/imported MPS2-Cortex M4 Debugger.
 
 Performance Comparison 1 (L=8): Original KYBER1024 KEM vs. P_8-KYBER1024 KEM in 8 AES Key Exchanges:
 | Method                 | KeyGen (CPU Clock Cycles)| Enc (CPU Clock Cycles) | Dec (CPU Clock Cycles) |Ciphertext Size (bytes) |Decryption Failure Rate |
