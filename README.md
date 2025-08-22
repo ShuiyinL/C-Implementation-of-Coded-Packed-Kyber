@@ -28,7 +28,7 @@ The code is based on the official Kyber reference implementation: https://github
 
 #### 3. Compile and Run
 1. build the imported project `P_Kyber_Test`.
-2. Run the project using the created/imported MPS2-Cortex M4 Debugger.
+2. Run the project using the created/imported MPS2-Cortex M4 debugger.
 
 Performance Comparison 1 (L=8): Original KYBER1024 KEM vs. P_8-KYBER1024 KEM in 8 AES Key Exchanges:
 | Method                 | KeyGen (CPU Clock Cycles)| Enc (CPU Clock Cycles) | Dec (CPU Clock Cycles) |Ciphertext Size (bytes) |Decryption Failure Rate |
