@@ -23,6 +23,7 @@ The code is based on the official Kyber reference implementation: https://github
 
 #### 2. Debugger Setup
 1. Create an **MPS2-Cortex M4 Debugger** under: File → New → Model Connection → Arm FVP (installed with Arm DS)
+   - **Alternative:** Unzip `M4_Installed.zip` and import the **launch configuration** from the `M4_Installed` folder.
 
 #### 3. Compile and Run
 1. Compile the imported project `P_Kyber_Test`.
