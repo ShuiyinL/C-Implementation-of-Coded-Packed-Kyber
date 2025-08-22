@@ -119,53 +119,34 @@ typedef struct {
 } ClosestResult;
 
 
-ClosestResult findClosestInSortedFloatArray(const float arr[], int n, int16_t target) {
+ClosestResult findClosestInSortedFloatArray(const float arr[], int n, float target) {
     ClosestResult result;
 
-    // Handle boundaries quickly
-    if (target <= arr[0]) {
-        result.element = arr[0];
-        result.index = 0;
-        return result;
-    }
-    if (target >= arr[n - 1]) {
-        result.element = arr[n - 1];
-        result.index = n - 1;
-        return result;
-    }
+    // Average step shortcut
+    float avgStep = (arr[n-1] - arr[0]) / (n - 1);
 
-    // Binary search to find the insertion point
-    int low = 0, high = n - 1;
-    while (low < high) {
-        int mid = (low + high) >> 1;
-        if (arr[mid] < target)
-            low = mid + 1;
-        else
-            high = mid;
-    }
+    // Initial guess
+    int idx = (int)((target - arr[0]) / avgStep);
 
-    // low is the index of the first element >= target
-    int idx2 = low;       // candidate on the right
-    int idx1 = low - 1;   // candidate on the left
+    // Clamp to valid range
+    if (idx < 0) idx = 0;
+    if (idx >= n-1) idx = n-2;
 
-    // Compare which is closer
-    float diff1 = target - arr[idx1];
-    if (diff1 < 0) diff1 = -diff1;
-    float diff2 = arr[idx2] - target;
-    if (diff2 < 0) diff2 = -diff2;
+    // Local search around guess (only check idx, idx+1)
+    float diff0 = arr[idx] - target;
+    float diff1 = arr[idx+1] - target;
 
-    if (diff1 <= diff2) {
-        result.element = arr[idx1];
-        result.index = idx1;
-    }
-    else {
-        result.element = arr[idx2];
-        result.index = idx2;
+    // Compare squared differences to avoid fabsf
+    if (diff0*diff0 <= diff1*diff1) {
+        result.index = idx;
+        result.element = arr[idx];
+    } else {
+        result.index = idx+1;
+        result.element = arr[idx+1];
     }
 
     return result;
 }
-
 
 
 
