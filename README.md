@@ -18,8 +18,8 @@ The code is based on the official Kyber reference implementation: https://github
 2. Import the folder `P_Kyber_Test` as **Existing Projects into Workspace** in Arm DS.
    - The automatically generated **Makefile** is located in: P_Kyber_Test\Debug\makefile
    - The current **main file** is located in: P_Kyber_Test\src\P_Kyber_Test.c
-   - This file is configured for **L = 1**.
-   - To run with **L = 8**,  overwrite `P_Kyber_Test\src\P_Kyber_Test.c` with `P_Kyber_Test.c` from the root folder of the repository.
+     - This file is configured for **L = 1**.
+     - To run with **L = 8**,  overwrite `P_Kyber_Test\src\P_Kyber_Test.c` with `P_Kyber_Test.c` from the root folder of the repository.
 
 #### 2. Debugger Setup: MPS2-Cortex M4
 1. Unzip `M4_Installed.zip`
