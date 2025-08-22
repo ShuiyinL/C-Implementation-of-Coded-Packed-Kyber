@@ -20,7 +20,7 @@ Performance Comparison 1 (L=8): Original KYBER1024 KEM vs. P_8-KYBER1024 KEM in 
 | Uncoded P_8-KYBER1024  | 1,982,539                | 1,710,068              | 1,782,147              |2688                    | 2^{-187}               |
 | E8 Coded P_8-KYBER1024 | 1,982,490                | 1,713,772              | 1,977,249              |2688                    | 2^{-336}               |
  
-Performance Comparison 2: Original KYBER1024 KEM (du=11, dv=5) vs. P_1-KYBER1024 KEM (du=10, dv=4) in 1 AES Key Exchange:
+Performance Comparison 2 (L=1): Original KYBER1024 KEM (du=11, dv=5) vs. P_1-KYBER1024 KEM (du=10, dv=4) in 1 AES Key Exchange:
 | Method                                         | KeyGen (CPU Clock Cycles)| Enc (CPU Clock Cycles) | Dec (CPU Clock Cycles) |Ciphertext Size (bytes) |Decryption Failure Rate |
 |------------------------------------------------|--------------------------|------------------------|------------------------|------------------------|------------------------|
 | KYBER1024                                      | 416,342                  | 505,098                | 534,088                |1568  (du=11, dv=5)     | 2^{-174}               |
