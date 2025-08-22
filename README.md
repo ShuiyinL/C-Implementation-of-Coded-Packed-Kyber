@@ -24,11 +24,11 @@ The code is based on the official Kyber reference implementation: https://github
 #### 2. Debugger Setup: MPS2-Cortex M4
 1. Unzip `M4_Installed.zip`
 2. import the folder `M4_Installed` as **Existing Projects into Workspace** in Arm DS
-   - **Alternative: Create an **MPS2-Cortex M4 Debugger** under: File → New → Model Connection → Arm FVP (installed with Arm DS) 
 
-#### 3. Compile and Run
-1. build the imported project `P_Kyber_Test`.
-2. Run the project using the created/imported MPS2-Cortex M4 debugger.
+#### 3. Compile and Run (see screenshots below the tables)
+1. Build the imported project `P_Kyber_Test` in the **Project Explorer**.  
+2. In the **Project Explorer**, open the `M4_Installed` folder and double-click `M4_Installed.launch`. 
+3. Run the connected **Cortex-M4** debugger. 
 
 Performance Comparison 1 (L=8): Original KYBER1024 KEM vs. P_8-KYBER1024 KEM in 8 AES Key Exchanges:
 | Method                 | KeyGen (CPU Clock Cycles)| Enc (CPU Clock Cycles) | Dec (CPU Clock Cycles) |Ciphertext Size (bytes) |Decryption Failure Rate |
@@ -43,3 +43,7 @@ Performance Comparison 2 (L=1): Original KYBER1024 KEM (du=11, dv=5) vs. P_1-KYB
 | KYBER1024                                      | 416,342                  | 505,098                | 534,088                |1568  (du=11, dv=5)     | 2^{-174}               |
 | E8 Coded P_1 KYBER1024 with Kyber Quantization | 416,341                  | 502,323                | 557,284                |1408  (du=10, dv=4)     | 2^{-199}               |
 | E8 Coded P_1-KYBER1024 with MMSE Quantization  | 416,341                  | 568,915                | 626,011                |1408  (du=10, dv=4)     | 2^{-204}               |
+
+<img src="Arm_DS_screenshot_P1_KQ.png" width="600">
+<img src="Arm_DS_screenshot_P1_MMSEQ.png" width="600">
+
