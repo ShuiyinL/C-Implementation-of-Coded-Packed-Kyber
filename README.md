@@ -33,8 +33,8 @@ The code is based on the official Kyber reference implementation: https://github
 | Method                 | KeyGen (CPU Clock Cycles)| Enc (CPU Clock Cycles) | Dec (CPU Clock Cycles) |Ciphertext Size (bytes) |Decryption Failure Rate |
 |----------------------- |--------------------------|------------------------|------------------------|------------------------|------------------------|
 | KYBER1024 (8 calls)    | 3,330,736                | 4,040,784              | 4,272,704              |12544                   | 2^{-174}               |
-| Uncoded P_8-KYBER1024  | 1,982,539                | 1,710,068              | 1,782,147              |2688                    | 2^{-187}               |
-| E8 Coded P_8-KYBER1024 | 1,982,490                | 1,713,772              | 1,977,249              |2688                    | 2^{-336}               |
+| Uncoded P_8-KYBER1024  | 1,982,539                | 1,635,570              | 1,707,649              |2688                    | 2^{-187}               |
+| E8 Coded P_8-KYBER1024 | 1,982,490                | 1,639,528              | 1,903,005              |2688                    | 2^{-336}               |
  
 #### Performance Comparison 2 (L=1): Original KYBER1024 KEM (du=11, dv=5) vs. P_1-KYBER1024 KEM (du=10, dv=4) in 1 AES Key Exchange:
 | Method                                         | KeyGen (CPU Clock Cycles)| Enc (CPU Clock Cycles) | Dec (CPU Clock Cycles) |Ciphertext Size (bytes) |Decryption Failure Rate |
